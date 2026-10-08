@@ -77,3 +77,6 @@ The framework defaults to solid ripple feedback and adds Android-target `-O3`
 to HWUI and framework JNI builds. Host, ThinLTO, AFDO and frame-pointer settings
 are unchanged. See [the source scan and adaptation notes](docs/o3-review.md) for
 the reviewed legacy repositories, scope and build-validation limits.
+
+The QS/QQS tile ViewModel cache from crDroid is also included. See
+[cache validation and additional commit review](docs/qs-cache-and-extra-review.md).

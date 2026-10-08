@@ -57,3 +57,16 @@ that read them; Launcher-specific and gesture-driven QS transitions have their
 own paths. No jank reduction or successful ROM build is claimed by this change.
 
 Both repositories retain their upstream Git history and use `lineage-23.2`.
+
+## Edge and shade effects
+
+The framework also disables the default `EdgeEffect` stretch/glow feedback with
+`TYPE_NONE`. Widgets using the framework effect stop deforming at scroll bounds;
+independent overscroll implementations are not covered.
+
+SystemUI's `NotificationPanelViewController` opens the shade without fling
+overshoot and clamps panel overexpansion to zero. This removes the shade/QS frame
+rebound on the legacy shade controller path, which can host Compose QS.
+QS tile squishiness and normal expansion transitions remain enabled. The separate
+SceneContainer shade implementation is not changed. These source edits require
+rebuilding and installing the ROM; no on-device validation has been performed.

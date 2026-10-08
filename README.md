@@ -70,3 +70,10 @@ rebound on the legacy shade controller path, which can host Compose QS.
 QS tile squishiness and normal expansion transitions remain enabled. The separate
 SceneContainer shade implementation is not changed. These source edits require
 rebuilding and installing the ROM; no on-device validation has been performed.
+
+## Solid ripple and native optimization
+
+The framework defaults to solid ripple feedback and adds Android-target `-O3`
+to HWUI and framework JNI builds. Host, ThinLTO, AFDO and frame-pointer settings
+are unchanged. See [the source scan and adaptation notes](docs/o3-review.md) for
+the reviewed legacy repositories, scope and build-validation limits.
